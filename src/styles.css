@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+
+:root{
+  --app-main-color: pink;
+
+}
+
+
+*{
+  margin:0px;
+  box-sizing: border-box;
+}
+
+body{
+  font-family:cursive;
+
+}
+
+.container{
+  margin: 0 auto;
+  max-width:1500px;
+  outline: 0px solid white;
+}
+h1{
+  padding:1rem 0;
+  text-align:center;
+  letter-spacing:1px;
+  color:pink;
+  font-family:cursive;
+  outline:1px solid navajowhite;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
