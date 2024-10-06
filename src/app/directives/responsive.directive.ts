@@ -1,4 +1,4 @@
-import {Directive, ElementRef} from '@angular/core';
+import {Directive, ElementRef, Renderer2} from '@angular/core';
 import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
 
 @Directive({
@@ -6,15 +6,15 @@ import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
 })
 export class ResponsiveDirective {
 
-  constructor(private element: ElementRef,private breakpointObserver: BreakpointObserver) {
+  constructor(private element: ElementRef,private breakpointObserver: BreakpointObserver, private renderer: Renderer2) {
 this.breakpointObserver.observe([Breakpoints.HandsetPortrait, Breakpoints.WebLandscape]).subscribe({
   next:(result=>{
   if(result.matches){
     if(result.breakpoints[Breakpoints.HandsetPortrait ]){
-      this.element.nativeElement.classList.add('pc');
+      this.renderer.removeClass(this.element.nativeElement,'pc');
     }
     if(result.breakpoints[Breakpoints.WebLandscape]){
-      this.element.nativeElement.classList.remove('pc');
+      this.renderer.addClass(this.element.nativeElement,'pc');
     }
   }
   })

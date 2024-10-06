@@ -78,7 +78,7 @@
 
 :host.pc .title{
   grid-column:1/2;
-  padding:0%;
+  padding:0;
   margin:auto;
   font-size:5rem;
   font-style:normal;
@@ -94,8 +94,6 @@
 :host.pc .name{
   grid-row:2/3;
   width:600px;
-  margin:auto;
-  margin-left:0;
-  margin-bottom:0;
+  margin: auto auto 0 0;
   height:max-content;
 }
